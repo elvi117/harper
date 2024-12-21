@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../static/styles.css" />
+        <title>Formularz Logowania</title>
+    </head>
+    <body>
+        <form class="general-form" action="/log_in" method="POST">
+            <h2>Formularz Logowania</h2>
+
+            <input type="email" name="email" placeholder="E-mail" required />
+            <input
+                type="password"
+                name="password"
+                id="haslo"
+                placeholder="Hasło"
+                required
+            />
+            <a href="/reset_hasla">Zapomniałeś hasła?</a>
+
+            <div class="show-password">
+                <input
+                    type="checkbox"
+                    id="show-password"
+                    onclick="togglePasswordVisibility()"
+                />
+                <label for="show-password">Pokaż hasło</label>
+            </div>
+            <button type="submit">Zaloguj się</button>
+
+            <a href="/utworz_konto"> Nie masz konta ? Zarejestruj się</a>
+        </form>
+
+        <script>
+            function togglePasswordVisibility() {
+                var password = document.getElementById("haslo");
+                if (password.type === "password") {
+                    password.type = "text";
+                } else {
+                    password.type = "password";
+                }
+            }
+        </script>
+    </body>
+</html>

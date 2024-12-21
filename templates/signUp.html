@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../static/styles.css" />
+        <title>Formularz Rejestracyjny</title>
+    </head>
+    <body>
+        <form class="general-form" action="/sign_up" method="POST">
+            <h2>Formularz Rejestracyjny</h2>
+            <input type="text" name="imie" placeholder="Imię" required />
+            <input
+                type="text"
+                name="nazwisko"
+                placeholder="Nazwisko"
+                required
+            />
+            <input type="email" name="email" placeholder="E-mail" required />
+            <input
+                type="password"
+                name="password"
+                id="haslo"
+                placeholder="Hasło"
+                required
+            />
+            <input
+                type="password"
+                name="powtorz_haslo"
+                id="powtorz_haslo"
+                placeholder="Powtórz hasło"
+                required
+            />
+            <div class="show-password">
+                <input
+                    type="checkbox"
+                    id="show-password"
+                    onclick="togglePasswordVisibility()"
+                />
+                <label for="show-password">Pokaż hasło</label>
+            </div>
+            <button type="submit">Zarejestruj się</button>
+        </form>
+        <script>
+            function togglePasswordVisibility() {
+                var password = document.getElementById("haslo");
+                var confirmPassword = document.getElementById("powtorz_haslo");
+                if (password.type === "password") {
+                    password.type = "text";
+                    confirmPassword.type = "text";
+                } else {
+                    password.type = "password";
+                    confirmPassword.type = "password";
+                }
+            }
+        </script>
+    </body>
+</html>
