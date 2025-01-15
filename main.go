@@ -32,5 +32,5 @@ func main() {
 	http.HandleFunc("/create_password", auth.CreatePassword)
 	http.HandleFunc("/log_out", auth.LogOut)
 
-	http.ListenAndServe(":8080", nil)
+	http.ListenAndServe(":3000", nil)
 }
